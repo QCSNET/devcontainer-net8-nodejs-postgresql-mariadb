@@ -1,0 +1,46 @@
+version: "3"
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # Monta la cartella del progetto (che si trova al di sopra della cartella .devcontainer)
+    volumes:
+      - ../:/workspace:cached
+    ports:
+      - "3000:3000"
+      - "5000:5000"
+    depends_on:
+      - postgres
+      - mariadb
+
+  postgres:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: coder
+      POSTGRES_PASSWORD: coder
+      POSTGRES_DB: coderdb
+    volumes:
+      # Volume per la persistenza dei dati
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  mariadb:
+    image: mariadb:10.11
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: coderdb
+      MYSQL_USER: coder
+      MYSQL_PASSWORD: coderpassword
+    volumes:
+      # Volume per la persistenza dei dati
+      - mariadbdata:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+volumes:
+  pgdata:
+  mariadbdata:
