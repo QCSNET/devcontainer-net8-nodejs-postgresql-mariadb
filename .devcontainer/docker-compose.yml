@@ -2,8 +2,8 @@ version: "3"
 services:
   dev:
     build:
-        context: /workspaces/devcontainer-net8-nodejs-postgresql-mariadb/.devcontainer
-        dockerfile: /workspaces/devcontainer-net8-nodejs-postgresql-mariadb/.devcontainer
+        context: .
+        dockerfile: Dockerfile
     # Monta la cartella del progetto (che si trova al di sopra della cartella .devcontainer)
     volumes:
       - ../:/workspace:cached
