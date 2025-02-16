@@ -2,7 +2,7 @@
   "name": "Node, TS, .NET8, PostgreSQL & MariaDB Workspace",
   "dockerComposeFile": "docker-compose.yaml",
   "service": "dev",
-	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"workspaceFolder": "/workspaces",
   "extensions": [
     "ms-dotnettools.csharp",
     "dbaeumer.vscode-eslint",
