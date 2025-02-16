@@ -1,6 +1,6 @@
 {
   "name": "Node, TS, .NET8, PostgreSQL & MariaDB Workspace",
-  "dockerComposeFile": "./docker-compose.yml",
+  "dockerComposeFile": "/workspaces/devcontainer-net8-nodejs-postgresql-mariadb/.devcontainer/docker-compose.yml",
   "service": "dev",
   "workspaceFolder": "/workspace",
   "extensions": [
