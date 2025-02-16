@@ -3,9 +3,9 @@ services:
     build:
         context: .
         dockerfile: Dockerfile
-    # Monta la cartella del progetto (che si trova al di sopra della cartella .devcontainer)
     volumes:
-      - ../:/workspace:cached
+      # This is where VS Code should expect to find your project's source code and the value of "workspaceFolder" in .devcontainer/devcontainer.json
+      - ..:/workspace:cached
     ports:
       - "3000:3000"
       - "5000:5000"

@@ -1,18 +1,11 @@
 {
   "name": "Node, TS, .NET8, PostgreSQL & MariaDB Workspace",
-  //"dockerComposeFile": "docker-compose.yaml",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
+  "dockerComposeFile": ["docker-compose.yaml"],
   "service": "dev",
 	"workspaceFolder": "/workspaces",
-  "extensions": [
-    "ms-dotnettools.csharp",
-    "dbaeumer.vscode-eslint",
-    "ms-vscode.vscode-typescript-tslint-plugin"
-  ],
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
-  },
-  "postCreateCommand": "npm install"
+	// Set *default* container specific settings.json values on container create.
+	"settings": {},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": []
 }
